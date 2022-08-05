@@ -2,7 +2,7 @@
 
 import { Module } from '@nestjs/common';
 import { TaskModule } from './modules/task/task.module';
-import { ConfigModule } from '@nestjs/config'; // Импортируем TaskModule
+import { ConfigModule } from '@nestjs/config'; // Импортируем ConfigModule
 import * as Joi from '@hapi/joi';
 import { PostgresModule } from './providers/postgres/postgres.module'; // Joi для валидации переменных конфига из файла .env
 
