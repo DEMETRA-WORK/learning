@@ -11,8 +11,7 @@ export class SolidOcpController {
 
   @Get('check-teh') // Данный декоратор создаёт маршрут для запроса из браузера, localhost:3500/solid-ocp/check-teh?type=car&lights=2&wheels=4&doors=4
   checkTechnicalInspection(@Query() query: CheckTehDto) {
-    const { lights, wheels, doors, type } = query;
-    console.log(query);
+    const { type } = query;
     const transports = {
       // Здесь мы указываем, к какому типу транспорта какой класс относится
       car: this.CarTransport,
