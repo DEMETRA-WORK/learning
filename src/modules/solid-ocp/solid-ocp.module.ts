@@ -20,7 +20,7 @@ import { SolidOcpController } from './controllers/solid-ocp.controller';
     },
     BikeTransportService,
     {
-      // Данный код подключает фабрику "CarTransport" для последующего использования с вторым принципом SOLID OCP
+      // Данный код подключает фабрику "BikeTransport" для последующего использования с вторым принципом SOLID OCP
       provide: 'BikeTransport', // В данном случае, мы подключаем Class Bike (То есть тип транспорта "Мотоцикл")
       useFactory: (t) => new TransportService(t),
       inject: [BikeTransportService],
