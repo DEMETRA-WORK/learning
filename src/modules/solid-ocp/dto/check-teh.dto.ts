@@ -10,10 +10,12 @@ export class CheckTehDto {
   @IsInt() // Должно быть числом
   readonly lights: number;
 
+  @Type(() => Number)
   @IsInt() // Должно быть числом
   @Transform(({ value }) => parseInt(value)) // Переводим значение в число
   public wheels: number;
 
+  @Type(() => Number)
   @IsInt() // Должно быть числом
   @Transform(({ value }) => parseInt(value)) // Переводим значение в число
   public doors: number;
