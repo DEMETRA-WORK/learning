@@ -4,7 +4,8 @@ import { Module } from '@nestjs/common';
 import { TaskModule } from './modules/task/task.module';
 import { ConfigModule } from '@nestjs/config'; // Импортируем ConfigModule
 import * as Joi from '@hapi/joi';
-import { PostgresModule } from './providers/postgres/postgres.module'; // Joi для валидации переменных конфига из файла .env
+import { PostgresModule } from './providers/postgres/postgres.module';
+import { SolidOcpModule } from './modules/solid-ocp/solid-ocp.module'; // Joi для валидации переменных конфига из файла .env
 
 @Module({
   imports: [
@@ -26,6 +27,7 @@ import { PostgresModule } from './providers/postgres/postgres.module'; // Joi д
     }),
     PostgresModule, // Подключаем PostgresModule (который делает подключение к postgres)
     TaskModule, // Подключаем Task Module (который реализует логику выполнения фоновых задач с помощью BULL)
+    SolidOcpModule, // Подключаем SolidOcp Module (который демонстрирует второй принцип SOLID OCP на примере фабрик)
   ],
   controllers: [], // Здесь подключаем необходимые контроллеры, если такие необходимы
   providers: [], // Здесь подключаем провайдеры, в нашем случае сервисы

@@ -15,6 +15,7 @@ export class TaskProcess {
     try {
       const { id } = job.data.taskData;
       this.taskService.handleTask(id);
+
       this.logger.debug(
         `Процессор получил задание на выполнения - запускаю задачу ${id}`,
       );

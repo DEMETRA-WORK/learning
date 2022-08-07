@@ -47,7 +47,7 @@ export class TaskService implements OnModuleInit {
   }
 
   async handleTask(id: number) {
-    // Метод запускается из процессора BULL, то есть BULL когда получает задание, она запускается в процессоре. Так вот наш процессор вызывает данных метод
+    // Метод запускается из процессора BULL, то есть BULL когда получает задание, она запускается в процессоре. Так вот наш процессор вызывает данный метод
     this.logger.debug(`Задача выполнена, id: ${id}`);
     await this.taskLogService.writeLogTask(id, 'Задача выполнена');
   }
