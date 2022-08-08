@@ -17,11 +17,11 @@ export class TaskService implements OnModuleInit {
 
   onModuleInit() {
     /* ВНИМАНИЕ, ДАННЫЙ КОД ДЛЯ ПРИМЕРА, ОН БУДЕТ КАЖДЫЕ 5 СЕКУНД СТАВИТЬ ЗАДАЧИ В ОЧЕРЕДЬ BULL, ПОД НАЗВАНИЕМ QUEUE_TASK */
-    let id = 1;
-    setInterval(() => {
-      this.queueTask(id); // Вызываем метод, который добавляет задачу в очередь BULL
-      id++;
-    }, 5000);
+    // let id = 1;
+    // setInterval(() => {
+    //   this.queueTask(id); // Вызываем метод, который добавляет задачу в очередь BULL
+    //   id++;
+    // }, 5000);
   }
 
   async queueTask(id: number) {

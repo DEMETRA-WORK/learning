@@ -13,20 +13,21 @@ import { SolidOcpController } from './controllers/solid-ocp.controller';
   providers: [
     CarTransportService,
     {
-      // Данный код подключает фабрику "CarTransport" для последующего использования с вторым принципом SOLID OCP
+      // Данный код подключает фабрику "CarTransport" для последующего использования с соблюдением второго принципа SOLID OCP
       provide: 'CarTransport', // В данном случае, мы подключаем Class Car (То есть тип транспорта "Машина")
       useFactory: (t) => new TransportService(t),
       inject: [CarTransportService],
     },
     BikeTransportService,
     {
-      // Данный код подключает фабрику "BikeTransport" для последующего использования с вторым принципом SOLID OCP
+      // Данный код подключает фабрику "BikeTransport" для последующего использования с соблюдением второго принципа SOLID OCP
       provide: 'BikeTransport', // В данном случае, мы подключаем Class Bike (То есть тип транспорта "Мотоцикл")
       useFactory: (t) => new TransportService(t),
       inject: [BikeTransportService],
     },
     // И таких фабрик может быть сколько угодно. К примеру дальше мы создадим класс Cargo "Грузовой транспорт"
     // То есть нам не нужно менять наш текущий код класса TransportService, нам достаточно лишь добавить класс нового вида транспорта
+    // Что и соответствует принципу SOLID OCP - открыт для расширения, закрыт для изменения
   ], // Здесь подключаем провайдеры
   exports: ['CarTransport', 'BikeTransport'], // Экспортируем наши фабрики, чтобы они были доступны там где нам необходимо
 })
